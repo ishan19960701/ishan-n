@@ -40,4 +40,18 @@ $('a.smooth-scroll')
       });
     }
   }
+ $("#contactForm").on("submit", function(e) {
+    /* OnAction here*/
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    
+    var email = 'ishanlasindu@gmail.com';
+        var subject = formData.get('Subject');
+        var emailBody = formData.get('message');
+  
+        if(subject.length >0 && emailBody.length > 0){
+          document.location = "mailto:"+email+"?subject="+subject+"&body="+emailBody;
+        }
+  });
 });
